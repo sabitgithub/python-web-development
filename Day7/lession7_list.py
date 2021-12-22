@@ -64,6 +64,6 @@ print(cars.count('Audi'))
 cars.clear()
 print(cars)
 
-i=10
-print(dir(i))
-print(type(i))
+# i=10
+# print(dir(i))
+# print(type(i))
