@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        h2 {
+            color:red;
+            background-color:azure;
+        }
+
+        #mystyle {
+            background-color:red;
+            width:300px;
+            height: 300px;
+            color: yellow;
+            padding: 15px 20px 10px 20px;
+        }
+
+        .myclass {
+
+            background-color: green;
+            width:300px;
+            height: 300px;
+            color: yellow;
+            padding: 15px 20px 10px 20px;
+            border: 5px solid black;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div>
+        <h2>This is my first django application</h2>
+        <hr>
+        <a href="{% url 'aboutme' %}"> About</a>
+
+        <div id="mystyle">
+            We learn Django
+        </div>
+
+        <div class="myclass">
+
+        </div>
+
+
+    </div>
+</body>
+</html>
