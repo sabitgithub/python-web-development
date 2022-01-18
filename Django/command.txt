@@ -1,5 +1,6 @@
 py -m pip install django --user/
 pip install django
+
 django-admin startproject myprj1
 cd myprj1
 python manage.py startapp myapp
