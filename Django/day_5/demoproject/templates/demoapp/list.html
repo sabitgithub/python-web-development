@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Employee</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Date of Joining</th>
+        <th scope="col">Photo Graph</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        {% for emp in employee  %}
+        <tr>
+            <th scope="row">{{emp.id}}</th>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.doj | date:'Y-m-d' }}</td>
+            <td><img src="{{ emp.photo.url }}" alt="" width="100px" height="100px"></td>
+            <td>
+                <a href="#"><i class="fa fa-eye fa-2x"></i></a>
+                <a href="#"><i class="fa fa-edit fa-2x"></i></a>
+                <a href="#"><i class="fa fa-trash fa-2x"></i></a>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+              <td colspan="6" class="text-center bg-warning">No records found!!!</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>    
+{% endblock content %}
+    
+    

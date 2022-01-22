@@ -1,0 +1,43 @@
+run shell- python manage.py shell
+
+from demoapp.models import Department, Employee
+
+********************************
+Data Insert
+********************************
+dept1=Department(name='test')
+dept1.save()
+dept2=Department.objects.create(name='test2')
+dept3=Department.objects.get_or_create(name='test2')
+dept4=Department.objects.get_or_create(name='test3')
+
+d1=Department.objects.all()
+d2=Department.objects.all().order_by('name')
+d3=Department.objects.all().order_by('-name')
+
+Department.objects.get(pk=2)
+Department.objects.filter(id=2)
+Department.objects.filter(name__contains='t')
+Department.objects.filter(name__contains='c')
+
+
+Employee.objects.all()
+Employee.objects.order_by('-name')
+Employee.objects.get(name__iexact='Waliur')
+Employee.objects.filter(name__contains='r')
+Employee.objects.filter(name__icontains='r')
+Employee.objects.filter(id__in=[3,9])
+Employee.objects.filter(id__gt='20')
+Employee.objects.filter(id__gte='20')
+Employee.objects.filter(id__lte='20')
+Employee.objects.filter(name__startswith= 'L')
+Employee.objects.filter(name__istartswith= 'L')
+Employee.objects.filter(name__endswith= 'N')
+Employee.objects.filter(id__range=[10,23])
+
+
+********************************
+Delete
+********************************
+
+Employee.objects.get(pk=10).delete()
