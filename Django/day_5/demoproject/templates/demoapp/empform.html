@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ tittle }}
+{% endblock title %}
+
+
+{% block content %}
+    
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div  class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3>{{title}}</h3>
+                </div>
+                <div class="card-body">
+                  {% load crispy_forms_tags %}
+                  {{ form|crispy }}
+                </div>
+                <div class="card-footer text-muted">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="{% url 'list' %}" class="btn btn-warning">Back to List</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">Photograph</div>
+                <div class="card-body">
+                    <img src="{{ emp.photo.url }}" alt="" width='100%' class='blah'>
+                </div>
+                <div class="card-footer text-muted">
+                    
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+    </form>
+
+{% endblock content %}
+    
+    
